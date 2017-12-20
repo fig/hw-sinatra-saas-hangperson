@@ -7,10 +7,10 @@ class HangpersonGame
     @wrong_guesses = ''
   end
 
-  def guess(char)
-    char = char.to_s.downcase
-    raise ArgumentError unless char.match (/[a-z]{1}/)
-    word.include?(char) ? correct_guess(char) : wrong_guess(char)
+  def guess(letter)
+    letter = letter.to_s.downcase
+    raise ArgumentError unless letter.match (/[a-z]{1}/)
+    word.include?(letter) ? correct_guess(letter) : wrong_guess(letter)
   end
 
   def word_with_guesses
@@ -38,11 +38,11 @@ class HangpersonGame
 
   private
 
-  def correct_guess(char)
-    guesses.include?(char) ? false : guesses << char
+  def correct_guess(letter)
+    guesses.include?(letter) ? false : guesses << letter
   end
 
-  def wrong_guess(char)
-    wrong_guesses.include?(char) ? false : wrong_guesses << char
+  def wrong_guess(letter)
+    wrong_guesses.include?(letter) ? false : wrong_guesses << letter
   end
 end
