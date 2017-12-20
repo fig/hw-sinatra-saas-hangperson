@@ -7,7 +7,8 @@ Feature: start new game
 Scenario: I start a new game
 
   Given I am on the home page
-  And I press "New Game"
-  Then I should see "Guess a letter"
-  And I press "New Game"
+  When I press "New Game"
+  Then I should be on the show page
+  And I should see "Guess a letter"
+  When I press "New Game"
   Then I should see "Guess a letter"
