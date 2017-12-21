@@ -33,4 +33,6 @@ Scenario: guess invalid character
 
   Given I start a new game with word "foobar"
   When I guess ""
-  Then I should see "You must enter a valid letter (a-z)"
+  Then I should see "Invalid guess. You must enter a valid letter (a-z)"
+  And I guess "%"
+  Then I should see "Invalid guess. You must enter a valid letter (a-z)"
