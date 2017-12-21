@@ -9,7 +9,7 @@ class HangpersonGame
 
   def guess(letter)
     letter = letter.to_s.downcase
-    raise ArgumentError unless letter.match (/[a-z]{1}/)
+    return :invalid unless letter.match (/[a-z]{1}/)
     word.include?(letter) ? correct_guess(letter) : wrong_guess(letter)
   end
 

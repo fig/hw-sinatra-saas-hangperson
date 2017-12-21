@@ -75,13 +75,13 @@ describe HangpersonGame do
         @game = HangpersonGame.new('foobar')
       end
       it 'throws an error when empty' do
-        expect { @game.guess('') }.to raise_error(ArgumentError)
+        expect(@game.guess '').to eq(:invalid)
       end
-      it 'throws an error when not a letter' do
-        expect { @game.guess('%') }.to raise_error(ArgumentError)
+      it 'throws an error when empty' do
+        expect(@game.guess '%').to eq(:invalid)
       end
-      it 'throws an error when nil' do
-        expect { @game.guess(nil) }.to raise_error(ArgumentError)
+      it 'throws an error when empty' do
+        expect(@game.guess nil).to eq(:invalid)
       end
     end
   end
