@@ -43,7 +43,7 @@ class HangpersonApp < Sinatra::Base
     when false
       flash[:message] = 'You have already used that letter.'
     when :invalid
-      flash[:message] = 'You must enter a valid letter (a-z)'
+      flash[:message] = 'Invalid guess.'
     end
     redirect '/show'
   end
